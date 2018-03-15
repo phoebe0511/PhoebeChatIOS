@@ -1,3 +1,3 @@
 # PhoebeChatIOS
-This app stores all user messages at firebase database.
-There still are some issues of "ChatCell", will be updated soon.
+In this app, it stores all chat messages at firebase database.
+Under developed, it will be updated later.
