@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>167893417000-rp0jpo4smm45l910shqjjtrnuk5eskk5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.167893417000-rp0jpo4smm45l910shqjjtrnuk5eskk5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAQ5YxMHSqeICoKrJWY_2vuUfrSfebidGQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>167893417000</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ph.PhoebeChat</string>
+	<key>PROJECT_ID</key>
+	<string>my-ios-learning</string>
+	<key>STORAGE_BUCKET</key>
+	<string>my-ios-learning.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:167893417000:ios:ef9a54162cf5b584</string>
+	<key>DATABASE_URL</key>
+	<string>https://my-ios-learning.firebaseio.com</string>
+</dict>
+</plist>

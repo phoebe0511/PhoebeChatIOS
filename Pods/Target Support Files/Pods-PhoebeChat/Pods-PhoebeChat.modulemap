@@ -1,0 +1,6 @@
+framework module Pods_PhoebeChat {
+  umbrella header "Pods-PhoebeChat-umbrella.h"
+
+  export *
+  module * { export * }
+}

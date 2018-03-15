@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ChatViewController.keyboardShown(notification:):ChatViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "keyboardRect">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ChatViewController.keyboardShown(notification:):ChatViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.heightOfMsgView.constant">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChatViewController.tableView(_:cellForRowAt:):ChatViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "messageArray[indexPath.row].messageBody">
+            </PersistentString>
+            <PersistentString
+               value = "cellArray">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "cell.messageBody">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
