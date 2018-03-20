@@ -14,8 +14,15 @@
 		FC02F4B22058B7FA00EC3F35 /* PhoebeChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC02F4B02058B7FA00EC3F35 /* PhoebeChat.xcdatamodeld */; };
 		FC02F4B42058B7FA00EC3F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC02F4B32058B7FA00EC3F35 /* Assets.xcassets */; };
 		FC02F4B72058B7FA00EC3F35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC02F4B52058B7FA00EC3F35 /* LaunchScreen.storyboard */; };
-		FC7E41D420596A0E00C428E2 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7E41D220596A0E00C428E2 /* ChatCell.xib */; };
-		FC7E41D520596A0E00C428E2 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E41D320596A0E00C428E2 /* ChatCell.swift */; };
+		FC169E46205B7D3800C265BF /* LeftLargeChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC169E44205B7D3800C265BF /* LeftLargeChatCell.swift */; };
+		FC169E4A205B7D8300C265BF /* RightChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC169E48205B7D8300C265BF /* RightChatCell.swift */; };
+		FC169E4B205B7D8300C265BF /* RightChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC169E49205B7D8300C265BF /* RightChatCell.xib */; };
+		FC169E4E205B7DB100C265BF /* RightLargeChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC169E4C205B7DB100C265BF /* RightLargeChatCell.swift */; };
+		FC169E4F205B7DB100C265BF /* RightLargeChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC169E4D205B7DB100C265BF /* RightLargeChatCell.xib */; };
+		FC169E51205B7F8500C265BF /* LeftLargeChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC169E50205B7F8500C265BF /* LeftLargeChatCell.xib */; };
+		FC169E53205FA70A00C265BF /* BaseChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC169E52205FA70A00C265BF /* BaseChatCell.swift */; };
+		FC7E41D420596A0E00C428E2 /* LeftChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7E41D220596A0E00C428E2 /* LeftChatCell.xib */; };
+		FC7E41D520596A0E00C428E2 /* LeftChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E41D320596A0E00C428E2 /* LeftChatCell.swift */; };
 		FC7E41D7205970B000C428E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC7E41D6205970AF00C428E2 /* GoogleService-Info.plist */; };
 		FC7E41D92059761200C428E2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E41D82059761200C428E2 /* Message.swift */; };
 		FC7E41DB2059762000C428E2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E41DA2059762000C428E2 /* ChatViewController.swift */; };
@@ -35,8 +42,15 @@
 		FC02F4B32058B7FA00EC3F35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC02F4B62058B7FA00EC3F35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC02F4B82058B7FA00EC3F35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC7E41D220596A0E00C428E2 /* ChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
-		FC7E41D320596A0E00C428E2 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		FC169E44205B7D3800C265BF /* LeftLargeChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftLargeChatCell.swift; sourceTree = "<group>"; };
+		FC169E48205B7D8300C265BF /* RightChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChatCell.swift; sourceTree = "<group>"; };
+		FC169E49205B7D8300C265BF /* RightChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightChatCell.xib; sourceTree = "<group>"; };
+		FC169E4C205B7DB100C265BF /* RightLargeChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightLargeChatCell.swift; sourceTree = "<group>"; };
+		FC169E4D205B7DB100C265BF /* RightLargeChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightLargeChatCell.xib; sourceTree = "<group>"; };
+		FC169E50205B7F8500C265BF /* LeftLargeChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftLargeChatCell.xib; sourceTree = "<group>"; };
+		FC169E52205FA70A00C265BF /* BaseChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChatCell.swift; sourceTree = "<group>"; };
+		FC7E41D220596A0E00C428E2 /* LeftChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftChatCell.xib; sourceTree = "<group>"; };
+		FC7E41D320596A0E00C428E2 /* LeftChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftChatCell.swift; sourceTree = "<group>"; };
 		FC7E41D6205970AF00C428E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC7E41D82059761200C428E2 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FC7E41DA2059762000C428E2 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +126,7 @@
 				FC7E41DA2059762000C428E2 /* ChatViewController.swift */,
 				FC7E41DC2059763300C428E2 /* LogInViewController.swift */,
 				FC7E41DE2059764900C428E2 /* RegisterViewController.swift */,
+				FC169E52205FA70A00C265BF /* BaseChatCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -138,8 +153,14 @@
 		FC7E41D1205969F500C428E2 /* ChatCell */ = {
 			isa = PBXGroup;
 			children = (
-				FC7E41D320596A0E00C428E2 /* ChatCell.swift */,
-				FC7E41D220596A0E00C428E2 /* ChatCell.xib */,
+				FC7E41D320596A0E00C428E2 /* LeftChatCell.swift */,
+				FC7E41D220596A0E00C428E2 /* LeftChatCell.xib */,
+				FC169E50205B7F8500C265BF /* LeftLargeChatCell.xib */,
+				FC169E44205B7D3800C265BF /* LeftLargeChatCell.swift */,
+				FC169E48205B7D8300C265BF /* RightChatCell.swift */,
+				FC169E49205B7D8300C265BF /* RightChatCell.xib */,
+				FC169E4C205B7DB100C265BF /* RightLargeChatCell.swift */,
+				FC169E4D205B7DB100C265BF /* RightLargeChatCell.xib */,
 			);
 			path = ChatCell;
 			sourceTree = "<group>";
@@ -206,8 +227,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC169E4F205B7DB100C265BF /* RightLargeChatCell.xib in Resources */,
 				FC02F4B72058B7FA00EC3F35 /* LaunchScreen.storyboard in Resources */,
-				FC7E41D420596A0E00C428E2 /* ChatCell.xib in Resources */,
+				FC169E4B205B7D8300C265BF /* RightChatCell.xib in Resources */,
+				FC7E41D420596A0E00C428E2 /* LeftChatCell.xib in Resources */,
+				FC169E51205B7F8500C265BF /* LeftLargeChatCell.xib in Resources */,
 				FC7E41D7205970B000C428E2 /* GoogleService-Info.plist in Resources */,
 				FC02F4B42058B7FA00EC3F35 /* Assets.xcassets in Resources */,
 				FC02F4AF2058B7FA00EC3F35 /* Main.storyboard in Resources */,
@@ -283,13 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC169E53205FA70A00C265BF /* BaseChatCell.swift in Sources */,
+				FC169E46205B7D3800C265BF /* LeftLargeChatCell.swift in Sources */,
 				FC02F4B22058B7FA00EC3F35 /* PhoebeChat.xcdatamodeld in Sources */,
 				FC02F4AC2058B7FA00EC3F35 /* ViewController.swift in Sources */,
 				FC7E41D92059761200C428E2 /* Message.swift in Sources */,
 				FC7E41DF2059764900C428E2 /* RegisterViewController.swift in Sources */,
 				FC7E41DD2059763300C428E2 /* LogInViewController.swift in Sources */,
-				FC7E41D520596A0E00C428E2 /* ChatCell.swift in Sources */,
+				FC7E41D520596A0E00C428E2 /* LeftChatCell.swift in Sources */,
 				FC7E41DB2059762000C428E2 /* ChatViewController.swift in Sources */,
+				FC169E4A205B7D8300C265BF /* RightChatCell.swift in Sources */,
+				FC169E4E205B7DB100C265BF /* RightLargeChatCell.swift in Sources */,
 				FC02F4AA2058B7FA00EC3F35 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

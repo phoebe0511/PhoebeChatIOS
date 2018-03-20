@@ -11,10 +11,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "BaseChatCell.init(coder:):BaseChatCell.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in ChatViewController.keyboardShown(notification:):ChatViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.heightOfMsgView.constant">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseChatCell.initBubbleImage(imageView:color:):BaseChatCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.image">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

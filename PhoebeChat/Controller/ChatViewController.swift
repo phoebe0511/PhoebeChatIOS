@@ -12,7 +12,7 @@ import Firebase
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
-    var cellArray : [ChatCell] = [ChatCell]()
+
     let DATABASE_REF_NAME = "Messages"
     // We've pre-linked the IBOutlets
 
@@ -40,6 +40,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.separatorStyle = .none
 
         receiveFirebaseDB()
+        let nibName = UINib(nibName: "LeftChatCell", bundle: nil)
+        messageTableView.register(nibName, forCellReuseIdentifier: "leftCell")
+        let nibNameLL = UINib(nibName: "LeftLargeChatCell", bundle: nil)
+        messageTableView.register(nibNameLL, forCellReuseIdentifier: "leftLargeCell")
+        let nibNameR = UINib(nibName: "RightChatCell", bundle: nil)
+        messageTableView.register(nibNameR, forCellReuseIdentifier: "rightCell")
+        let nibNameRL = UINib(nibName: "RightLargeChatCell", bundle: nil)
+        messageTableView.register(nibNameRL, forCellReuseIdentifier: "rightLargeCell")
     }
     
     @objc func keyboardShown(notification: NSNotification) {
@@ -60,71 +68,53 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(estimatedFrame)
         return estimatedFrame
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
-        
-        //let cell = ChatCell.init(style: .default, reuseIdentifiecellArrayr: "ChatCell")
-        //let array = ["12", "efgb dfs dfghnjkl;675tefdsawergthyjkjhgf ghjkl;';lkjh", "eeeeee"]
-        cell.messageBody.text = messageArray[indexPath.row].messageBody
-        cell.senderName.text = messageArray[indexPath.row].sender
-        cell.senderImageView.image = UIImage(named: "senderIcon")
-        
-        let frame = calculateStringWidth(with: cell.messageBody.text!)
-
-        var constraint = NSLayoutConstraint(item: cell.messageBody, attribute: .trailing, relatedBy: .equal, toItem: cell.messageBackground, attribute: .trailing, multiplier: 1, constant: (-15))
-        cell.messageBackground.addConstraint(constraint)
-        
-        var leading_msgBody : CGFloat = 0
-        var tailing_msgBody : CGFloat = 0
-        
-        if cell.senderName.text == Auth.auth().currentUser?.email{
-            cell.bubbleImageView.image = UIImage(named: "talkbubble2")?.resizableImage(withCapInsets: UIEdgeInsetsMake(25, 25, 25, 25)).withRenderingMode(.alwaysTemplate)
-            cell.bubbleImageView.tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-            cell.senderImageView.isHidden = true
-            cell.senderName.isHidden = true
-            cell.messageBody.textColor = UIColor.white
-            tailing_msgBody = -30
-            if(frame.width > cell.frame.width - cell.senderImageView.frame.width - 10){
-                leading_msgBody = 60
-            }else{
-                leading_msgBody = messageTableView.frame.width - frame.width - 100
-            }
-        }else{
-            cell.bubbleImageView.image = UIImage(named: "talkbubble1")?.resizableImage(withCapInsets: UIEdgeInsetsMake(25, 25, 25, 25)).withRenderingMode(.alwaysTemplate)
-            cell.bubbleImageView.tintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-            cell.senderImageView.isHidden = false
-            cell.senderImageView.backgroundColor = UIColor.green
-            
-            leading_msgBody = 15
-            if(frame.width > messageTableView.frame.width - cell.senderImageView.frame.width - 100){
-                tailing_msgBody = -30
-            }else{
-                tailing_msgBody = (messageTableView.frame.width - frame.width - 100) * -1
+    
+    func ifLargeCell(framLength len : Int) -> Bool {
+        let cellWidth = messageTableView.safeAreaLayoutGuide.layoutFrame.width
+        return len > Int(cellWidth - 50.0)
+    }
+    
+    func tableScrollToBottom() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+            let numRows = self.messageTableView.numberOfRows(inSection: 0)
+            if numRows > 0{
+                let indexPath = IndexPath(row: numRows - 1, section: 0)
+                self.messageTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
             }
         }
-        
-        //leading_bubble = leading_msgBody - 15
-        //tailing_bubble = tailing_msgBody + 15
-        
-//        constraint = NSLayoutConstraint(item: cell.messageBody, attribute: .leading, relatedBy: .equal, toItem: cell.messageBackground, attribute: .leading, multiplier: 1, constant: leading_msgBody)
-//        cell.messageBackground.addConstraints([constraint])
-//
-//        constraint = NSLayoutConstraint(item: cell.messageBody, attribute: .trailing, relatedBy: .equal, toItem: cell.messageBackground, attribute: .trailing, multiplier: 1, constant: tailing_msgBody)
-//        cell.messageBackground.addConstraints([constraint])
-        cell.messageBody.leadingAnchor.constraint(equalTo: cell.messageBackground!.leadingAnchor, constant: leading_msgBody).isActive = true
-        cell.messageBody.trailingAnchor.constraint(equalTo: cell.messageBackground!.trailingAnchor, constant: tailing_msgBody).isActive = true
-        
-        constraint = NSLayoutConstraint(item: cell.bubbleImageView, attribute: .leading, relatedBy: .equal, toItem: cell.messageBody, attribute: .leading, multiplier: 1, constant: -15)
-        cell.messageBackground.addConstraints([constraint])
-        
-        constraint = NSLayoutConstraint(item: cell.bubbleImageView, attribute: .trailing, relatedBy: .equal, toItem: cell.messageBody, attribute: .trailing, multiplier: 1, constant: 15)
-        cell.messageBackground.addConstraints([constraint])
-        
-        //cell.messageBackground.bringSubview(toFront: cell.messageBody)
-        //cell.messageBody.backgroundColor = UIColor.green
-        return cell
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let frame = calculateStringWidth(with: messageArray[indexPath.row].messageBody)
+        if messageArray[indexPath.row].sender == Auth.auth().currentUser?.email{
+            if ifLargeCell(framLength: Int(frame.width)){
+                let cell = tableView.dequeueReusableCell(withIdentifier: "rightLargeCell", for: indexPath) as! RightLargeChatCell
+                cell.messageBody.text = messageArray[indexPath.row].messageBody
+                cell.initBubbleImage(imageView: cell.bubbleImageView, color: #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1), picName: "talkbubble2")
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "rightCell", for: indexPath) as! RightChatCell
+                cell.messageBody.text = messageArray[indexPath.row].messageBody
+                cell.initBubbleImage(imageView: cell.bubbleImage, color: #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1), picName: "talkbubble2ss")
+                return cell
+            }
+        }else{
+            if ifLargeCell(framLength: Int(frame.width)){
+                let cell = tableView.dequeueReusableCell(withIdentifier: "leftLargeCell", for: indexPath) as! LeftLargeChatCell
+                cell.messageBody.text = messageArray[indexPath.row].messageBody
+                cell.initBubbleImage(imageView: cell.bubbleImage, color: #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1), picName: "talkbubble1")
+                cell.senderName.text = messageArray[indexPath.row].sender
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "leftCell", for: indexPath) as! LeftChatCell
+                cell.messageBody.text = messageArray[indexPath.row].messageBody
+                cell.initBubbleImage(imageView: cell.bubbleImageView, color: #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1), picName: "talkbubble1")
+                cell.senderName.text = messageArray[indexPath.row].sender
+                return cell
+            }
+        }
+    }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageArray.count
@@ -133,13 +123,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @objc func tableViewTapped(){
         messageTextfield.endEditing(true)
-    }
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        UIView.animate(withDuration: 0.5) {
-//            self.heightConstraint.constant = (self.keyboardRect?.height)! + 50
-//            self.view.layoutIfNeeded()
-//        }
     }
     
 
@@ -171,6 +154,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.messageTextfield.isEnabled = true
                 self.messageTextfield.text = ""
                 self.sendButton.isEnabled = true
+                self.tableScrollToBottom()
             }
         }
         
