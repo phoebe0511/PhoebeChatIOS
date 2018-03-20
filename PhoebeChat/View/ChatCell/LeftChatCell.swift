@@ -10,7 +10,6 @@ import UIKit
 class LeftChatCell: BaseChatCell {
 
     @IBOutlet weak var bubbleImageView: UIImageView!
-    @IBOutlet var messageBackground: UIView!
     @IBOutlet var senderImageView: UIImageView!
     @IBOutlet var messageBody: UILabel!
     @IBOutlet var senderName: UILabel!

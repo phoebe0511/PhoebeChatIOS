@@ -46,5 +46,19 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "closure #1 in AppDelegate.receiveFirebaseDB():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.observeWithValueHandler">
+            </PersistentString>
+            <PersistentString
+               value = "self.hasToken">
+            </PersistentString>
+            <PersistentString
+               value = "self.fcmToken">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

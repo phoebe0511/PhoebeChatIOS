@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-//import Crashlytics
+import ChameleonFramework
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     // Declare instance variables here
@@ -27,6 +27,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = GradientColor(.diagonal, frame: self.view.frame, colors: [#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)])
         messageTableView.delegate = self
         messageTableView.dataSource = self
         
@@ -38,7 +39,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
         messageTableView.register(UINib(nibName: "ChatCell", bundle: nil), forCellReuseIdentifier: "ChatCell")
         messageTableView.separatorStyle = .none
-
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.receiveFirebaseDB()
         receiveFirebaseDB()
         let nibName = UINib(nibName: "LeftChatCell", bundle: nil)
         messageTableView.register(nibName, forCellReuseIdentifier: "leftCell")
@@ -174,6 +176,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             message.sender = sender
             self.messageArray.append(message)
             self.messageTableView.reloadData()
+            self.tableScrollToBottom()
         }
     }
     

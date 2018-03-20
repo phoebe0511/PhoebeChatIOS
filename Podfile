@@ -6,7 +6,10 @@ target 'PhoebeChat' do
 
   # Pods for PhoebeChat
   pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SVProgressHUD'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end

@@ -21,6 +21,7 @@
 		FC169E4F205B7DB100C265BF /* RightLargeChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC169E4D205B7DB100C265BF /* RightLargeChatCell.xib */; };
 		FC169E51205B7F8500C265BF /* LeftLargeChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC169E50205B7F8500C265BF /* LeftLargeChatCell.xib */; };
 		FC169E53205FA70A00C265BF /* BaseChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC169E52205FA70A00C265BF /* BaseChatCell.swift */; };
+		FC46DB4E2061038D004C84AB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DB4D2061038D004C84AB /* UserProfile.swift */; };
 		FC7E41D420596A0E00C428E2 /* LeftChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7E41D220596A0E00C428E2 /* LeftChatCell.xib */; };
 		FC7E41D520596A0E00C428E2 /* LeftChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E41D320596A0E00C428E2 /* LeftChatCell.swift */; };
 		FC7E41D7205970B000C428E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC7E41D6205970AF00C428E2 /* GoogleService-Info.plist */; };
@@ -49,6 +50,7 @@
 		FC169E4D205B7DB100C265BF /* RightLargeChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightLargeChatCell.xib; sourceTree = "<group>"; };
 		FC169E50205B7F8500C265BF /* LeftLargeChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftLargeChatCell.xib; sourceTree = "<group>"; };
 		FC169E52205FA70A00C265BF /* BaseChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChatCell.swift; sourceTree = "<group>"; };
+		FC46DB4D2061038D004C84AB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		FC7E41D220596A0E00C428E2 /* LeftChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftChatCell.xib; sourceTree = "<group>"; };
 		FC7E41D320596A0E00C428E2 /* LeftChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftChatCell.swift; sourceTree = "<group>"; };
 		FC7E41D6205970AF00C428E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		FC7E41DA2059762000C428E2 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		FC7E41DC2059763300C428E2 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		FC7E41DE2059764900C428E2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FC99EE5A2060D656002E2C24 /* PhoebeChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhoebeChat.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,7 @@
 		FC02F4A82058B7FA00EC3F35 /* PhoebeChat */ = {
 			isa = PBXGroup;
 			children = (
+				FC99EE5A2060D656002E2C24 /* PhoebeChat.entitlements */,
 				FC7E419E20594F7500C428E2 /* Module */,
 				FC7E419D20594F6E00C428E2 /* View */,
 				FC7E419B20594F3B00C428E2 /* Controller */,
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7E41D82059761200C428E2 /* Message.swift */,
+				FC46DB4D2061038D004C84AB /* UserProfile.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -201,6 +206,11 @@
 					FC02F4A52058B7FA00EC3F35 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -281,16 +291,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PhoebeChat/Pods-PhoebeChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -309,6 +323,7 @@
 			files = (
 				FC169E53205FA70A00C265BF /* BaseChatCell.swift in Sources */,
 				FC169E46205B7D3800C265BF /* LeftLargeChatCell.swift in Sources */,
+				FC46DB4E2061038D004C84AB /* UserProfile.swift in Sources */,
 				FC02F4B22058B7FA00EC3F35 /* PhoebeChat.xcdatamodeld in Sources */,
 				FC02F4AC2058B7FA00EC3F35 /* ViewController.swift in Sources */,
 				FC7E41D92059761200C428E2 /* Message.swift in Sources */,
@@ -456,9 +471,11 @@
 			baseConfigurationReference = 3752969364CE5C9E04281661 /* Pods-PhoebeChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PhoebeChat/PhoebeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32A2HQ29D3;
 				INFOPLIST_FILE = PhoebeChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ph.PhoebeChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,9 +489,11 @@
 			baseConfigurationReference = 4081F6C746A838D419A1DA5C /* Pods-PhoebeChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PhoebeChat/PhoebeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32A2HQ29D3;
 				INFOPLIST_FILE = PhoebeChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ph.PhoebeChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

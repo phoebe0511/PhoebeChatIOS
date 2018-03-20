@@ -18,10 +18,12 @@ class BaseChatCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
     }
     
     func initBubbleImage(imageView : UIImageView, color : UIColor, picName : String) {
-        imageView.image = UIImage(named: picName)?.resizableImage(withCapInsets: UIEdgeInsetsMake(22, 22, 22, 22)).withRenderingMode(.alwaysTemplate)
+        imageView.image = UIImage(named: picName)?.resizableImage(withCapInsets: UIEdgeInsetsMake(23, 23, 23, 23)).withRenderingMode(.alwaysTemplate)
         imageView.tintColor = color
+        
     }
 }
